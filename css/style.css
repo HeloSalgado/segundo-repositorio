@@ -1,0 +1,25 @@
+.div_card{
+    width: 500px;
+    height: fit-content;
+    background-color: #8bbbb1; 
+    border-radius: 25px;
+    border: solid 5px #020202;
+    margin: 20px;
+}
+
+.div_circulo{
+    width: 100px;
+    height: 100px;
+    background-color: goldenrod;
+    border-radius: 50px;
+}
+
+.h1_texto{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    color: rgb(74, 61, 45);
+}
+
+#h1_verde{
+    color: #be732d;
+}
