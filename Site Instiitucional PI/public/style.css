@@ -6,7 +6,7 @@ body {
 }
 
 .header {
-     border-bottom: 3px solid aqua; /*padding empurra os elementos para dentro */
+     border-bottom: 3px solid aqua; /*padding empurra os elementos de dentro  */
      background-color: #000;
      margin: 0px 0px 0px 0px;
 }
@@ -51,7 +51,7 @@ body {
 .banner .container {
     justify-content: center;
     align-items: center;
-    height: 470px;
+    height: 500px;
 }
 
 .banner .container p {
@@ -74,6 +74,7 @@ body {
 }
 
 .social .container .boxes {
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
