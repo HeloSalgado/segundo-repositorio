@@ -1,38 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChartJS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChartJS</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div>
+  <div class="graficos">
+    <div class="container">
+      <div>
+        <h3>Gráfico de linha</h3>
         <canvas id="myChart"></canvas>
       </div>
-      
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      
-      <script>
-        const ctx = document.getElementById('myChart');
-      
-        new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-              label: '# of Votes',
-              data: [9, 19, 3, 5, 2, 3],
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-      </script>
+      <div>
+        <h3>Gráfico de barras</h3>
+        <canvas id="myChart2"></canvas>
+      </div>
+    </div>
+  </div>
+
 </body>
+<script>
+  const labels = [
+    '12:00',
+    '13:00',
+    '14:00',
+    '15:00',
+    '16:00',
+    '17:00',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Temperatura',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [30, 29, 28, 25, 22, 23]
+    },
+    {
+      label: 'Umidade',
+      backgroundColor: 'rgb(0,0,205)',
+      borderColor: 'rgb(0,0,205)',
+      data: [80, 82, 80, 85, 80, 83]
+    }
+
+    ]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+</script>
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
+  const ctx = document.getElementById('myChart2');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Temperatura Média',
+        backgroundColor: 'rgb(255, 99, 132)',
+        data: [22, 24, 27, 23, 20, 18],
+        borderWidth: 1
+      },
+      {
+        label: 'Umidade',
+        backgroundColor: 'rgb(0, 0, 205)',
+        data: [90, 89, 93, 87, 88, 82],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
 </html>
